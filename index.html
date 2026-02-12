@@ -1,79 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Nosso Planeta</title>
+<link rel="stylesheet" href="./css.css">
+<link rel="icon" href="./logo f.png" type="image/x-icon">
+<script src="https://kit.fontawesome.com/79d3c9697b.js" crossorigin="anonymous"></script>
+<style>
+    /* Estilo da barra fixa no rodapé */
+    .fixed-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #222;
+        color: #fff;
+        font-size: 14px;
+        padding: 10px 20px;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 9999;
+    }
+    .fixed-footer a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .fixed-footer a:hover {
+        text-decoration: underline;
+    }
+    /* Ajustes básicos de imagens e texto */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    header.masthead {
+        background-color: #004080;
+        color: white;
+        text-align: center;
+        padding: 30px 0;
+    }
+    header.masthead .logo {
+        font-size: 28px;
+        font-weight: bold;
+    }
+    header.masthead .site-title {
+        font-size: 22px;
+    }
+    section.content, section.buckets, section.splash, aside.sidebar {
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+    section.buckets ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    section.buckets li {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        flex: 1 1 calc(50% - 20px);
+        padding: 15px;
+    }
+    section.buckets img {
+        width: 100%;
+        border-radius: 8px;
+    }
+    .sidebar .twin {
+        background: #fff;
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .splash-content {
+        background: #e0e0e0;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        text-align: center;
+    }
+    button#playButton {
+        background-color: #004080;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px 0;
+    }
+    button#playButton:hover {
+        background-color: #0066cc;
+    }
+</style>
+</head>
+<body>
 
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import PlanetCard from './components/PlanetCard';
-import ChatPanel from './components/ChatPanel';
-import { PLANETS } from './constants';
+<header class="masthead">
+    <div class="logo">Nosso Planeta</div>
+    <h2 class="site-title">Terra</h2>
+</header>
 
-const App: React.FC = () => {
-  return (
-    <div className="min-h-screen">
-      <Header />
-      
-      <main>
-        <Hero />
-
-        {/* Partícula OMG Section */}
-        <section id="misterios" className="py-20 bg-slate-950/50">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="relative rounded-3xl overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-900/60 to-transparent z-10"></div>
-              <img 
-                src="https://picsum.photos/id/1020/1920/600" 
-                alt="Cosmic Rays" 
-                className="w-full h-[400px] object-cover"
-              />
-              <div className="absolute inset-0 z-20 flex flex-col justify-center p-8 md:p-16 space-y-4 max-w-2xl">
-                <span className="text-purple-400 font-mono text-sm tracking-widest">ENERGIA EXTREMA</span>
-                <h2 className="text-3xl md:text-4xl font-black">A misteriosa origem da partícula OMG</h2>
-                <p className="text-slate-200 text-lg opacity-90 leading-relaxed">
-                  "O mistério não se limita apenas à partícula OMG, pois a ciência ainda não descobriu completamente qual é a origem dos raios cósmicos que emitem ultra-alta energia. A energia liberada excedeu a produção do Grande Colisor de Hádrons em 10 milhões de vezes."
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Planet Grid */}
-        <section id="planetas" className="py-20">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-              <div>
-                <h2 className="text-4xl font-black mb-2">Explorando o <span className="text-blue-500">Sistema Solar</span></h2>
-                <p className="text-slate-400">Clique no ícone de som para ouvir os segredos de cada astro.</p>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {PLANETS.map(planet => (
-                <PlanetCard key={planet.id} planet={planet} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <ChatPanel />
-      </main>
-
-      <footer className="bg-slate-950 border-t border-white/5 py-12 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="space-y-2 text-center md:text-left">
-             <h3 className="text-xl font-bold text-white tracking-tighter">NOSSO PLANETA</h3>
-             <p className="text-slate-500 text-sm italic">"Sempre é bom ter esperança." - Adriano Alves</p>
-          </div>
-          
-          <div className="flex items-center gap-6 text-sm font-medium text-slate-500">
-            <span>Data: 17/05/2024</span>
-            <a href="#" className="hover:text-blue-400 transition-colors uppercase tracking-widest text-xs font-bold">Voltar ao Topo</a>
-          </div>
-        </div>
-        <div className="mt-12 text-center text-slate-700 text-[10px] uppercase tracking-[0.2em]">
-          &copy; 2024 Exploração Espacial Interativa. Powered by Gemini AI.
-        </div>
-      </footer>
+<section class="content">
+    <div class="more-content">
+        <img src="./universo.gif" alt="Universo">
+        <h2 class="content-title">Sistema Solar</h2>
+        <button id="playButton">play- leitor de áudio</button>
+        <p>O movimento retrógrado dos planetas Há muitos anos atrás, a humanidade percebeu que alguns corpos celestes se movimentavam com velocidades de módulos e sentidos diferentes...</p>
     </div>
-  );
-};
+</section>
 
-export default App;
+<section class="buckets">
+    <ul>
+        <li>
+            <img src="./terra..gif" alt="Terra">
+            <div class="bucket">
+                <h3 class="bucket-title">Terra</h3>
+                <p>O Planeta Terra, também conhecido como mundo, planeta azul ou planeta água, tem cerca de 70% da sua superfície coberta por água...</p>
+            </div>
+        </li>
+        <li>
+            <img src="./lua1.jpg" alt="Lua">
+            <div class="bucket">
+                <h3 class="bucket-title">Lua</h3>
+                <p>24 de dezembro - Há 45 anos, os tripulantes da missão Apollo 8 fizeram a primeira viagem humana à Lua...</p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section class="splash">
+    <div class="splash-content">
+        <h2 class="content-title">A misteriosa origem da partícula OMG</h2>
+        <p>O mistério não se limita apenas à partícula OMG, pois a ciência ainda não descobriu completamente qual é a origem dos raios cósmicos...</p>
+    </div>
+</section>
+
+<section class="buckets">
+    <ul>
+        <li>
+            <img src="./plutão30.gif" alt="Plutão">
+            <div class="bucket">
+                <h3 class="bucket-title">Plutão</h3>
+                <p>Descoberto em 1930 pelo astrônomo Clyde Tombaugh, Plutão está localizado no Cinturão de Kuiper...</p>
+            </div>
+        </li>
+        <li>
+            <img src="./venus.01.gif" alt="Vênus">
+            <div class="bucket">
+                <h3 class="bucket-title">Vênus</h3>
+                <p>O planeta Vênus, sendo o segundo a partir do Sol, é o mais quente do Sistema Solar...</p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section class="buckets">
+    <ul>
+        <li>
+            <img src="./urano 9.gif" alt="Urano">
+            <div class="bucket">
+                <h3 class="bucket-title">Urano</h3>
+                <p>O planeta Urano é o terceiro maior do Sistema Solar e está posicionado na sétima órbita a partir do Sol...</p>
+            </div>
+        </li>
+        <li>
+            <img src="./neturno.gif" alt="Netuno">
+            <div class="bucket">
+                <h3 class="bucket-title">Netuno</h3>
+                <p>Netuno é o oitavo planeta do Sistema Solar, com temperaturas muito baixas, em torno de -200 °C...</p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section class="buckets">
+    <ul>
+        <li>
+            <img src="./mercurio.jpg" alt="Mercúrio">
+            <div class="bucket">
+                <h3 class="bucket-title">Mercúrio</h3>
+                <p>Mercúrio é considerado o menor planeta do Sistema Solar desde o rebaixamento de Plutão a planeta anão...</p>
+            </div>
+        </li>
+        <li>
+            <img src="./saturno.gif" alt="Saturno">
+            <div class="bucket">
+                <h3 class="bucket-title">Saturno</h3>
+                <p>Saturno é o sexto planeta a partir do Sol e é o segundo maior planeta do Sistema Solar...</p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<aside class="sidebar">
+    <div class="twin">
+        <h2 class="content-title">Marte</h2>
+        <p>Marte, conhecido como Planeta Vermelho, possui características estruturais semelhantes às da Terra...</p>
+    </div>
+    <div class="twin">
+        <h2 class="content-title">Júpiter</h2>
+        <p>Júpiter é formado basicamente por gases e é classificado como planeta gasoso...</p>
+    </div>
+</aside>
+
+<footer class="fixed-footer">
+    <span>sempre é bom ter esperança: adriano alves</span>
+    <span>Data: 17/05/2024</span>
+    <a href="#" class="back-to-top">Voltar ao Início</a>
+</footer>
+
+<script>
+    // Leitor de áudio
+    function lerConteudo() {
+        var elementosComTexto = document.querySelectorAll('p, h2, h3');
+        var conteudo = '';
+        elementosComTexto.forEach(function(el) {
+            conteudo += el.innerText + ' ';
+        });
+        var utterance = new SpeechSynthesisUtterance(conteudo);
+        window.speechSynthesis.speak(utterance);
+    }
+    document.getElementById('playButton').addEventListener('click', lerConteudo);
+
+    // Voltar ao topo suave
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
+</body>
+</html>
