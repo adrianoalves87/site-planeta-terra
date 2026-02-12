@@ -8,31 +8,6 @@
 <link rel="icon" href="./logo f.png" type="image/x-icon">
 <script src="https://kit.fontawesome.com/79d3c9697b.js" crossorigin="anonymous"></script>
 <style>
-    /* Estilo da barra fixa no rodapé */
-    .fixed-footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #222;
-        color: #fff;
-        font-size: 14px;
-        padding: 10px 20px;
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 9999;
-    }
-    .fixed-footer a {
-        color: #ffcc00;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .fixed-footer a:hover {
-        text-decoration: underline;
-    }
-    /* Ajustes básicos de imagens e texto */
     body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -44,11 +19,11 @@
         text-align: center;
         padding: 30px 0;
     }
-    header.masthead .logo {
+    header .logo {
         font-size: 28px;
         font-weight: bold;
     }
-    header.masthead .site-title {
+    header .site-title {
         font-size: 22px;
     }
     section.content, section.buckets, section.splash, aside.sidebar {
@@ -100,13 +75,38 @@
     button#playButton:hover {
         background-color: #0066cc;
     }
+
+    /* Footer fixo */
+    .fixed-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #222;
+        color: #fff;
+        font-size: 14px;
+        padding: 10px 20px;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 9999;
+    }
+    .fixed-footer a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .fixed-footer a:hover {
+        text-decoration: underline;
+    }
 </style>
 </head>
 <body>
 
 <header class="masthead">
     <div class="logo">Nosso Planeta</div>
-    <h2 class="site-title">Terra</h2>
+    <h2 class="site-title">Sistema Solar</h2>
 </header>
 
 <section class="content">
@@ -114,8 +114,30 @@
         <img src="./universo.gif" alt="Universo">
         <h2 class="content-title">Sistema Solar</h2>
         <button id="playButton">play- leitor de áudio</button>
-        <p>O movimento retrógrado dos planetas Há muitos anos atrás, a humanidade percebeu que alguns corpos celestes se movimentavam com velocidades de módulos e sentidos diferentes...</p>
+        <p>O Sistema Solar é formado pelo Sol e todos os corpos celestes que orbitam ao seu redor, incluindo planetas, planetas anões, luas, asteroides e cometas. Cada planeta possui características únicas, como composição, tamanho, número de luas e clima. Alguns apresentam movimentos retrógrados observados da Terra, fenômeno que despertou a curiosidade humana desde os tempos antigos.</p>
     </div>
+</section>
+
+<!-- Planetas -->
+<section class="buckets">
+    <ul>
+        <li>
+            <img src="./mercurio.jpg" alt="Mercúrio">
+            <div class="bucket">
+                <h3 class="bucket-title">Mercúrio</h3>
+                <p>Mercúrio é o planeta mais próximo do Sol e o menor do Sistema Solar. Possui uma superfície rochosa e cheia de crateras, semelhante à Lua. Sua temperatura varia drasticamente de -170°C à noite a 430°C durante o dia. Não possui atmosfera significativa e não existem sinais de vida.</p>
+                <p><strong>Curiosidade:</strong> Um dia em Mercúrio dura 176 dias terrestres!</p>
+            </div>
+        </li>
+        <li>
+            <img src="./venus.01.gif" alt="Vênus">
+            <div class="bucket">
+                <h3 class="bucket-title">Vênus</h3>
+                <p>Vênus é o segundo planeta a partir do Sol e o mais quente do Sistema Solar, com temperaturas médias de 465°C. Sua atmosfera é densa e composta principalmente por dióxido de carbono, com nuvens de ácido sulfúrico. Vênus é semelhante em tamanho e massa à Terra.</p>
+                <p><strong>Curiosidade:</strong> Vênus gira no sentido contrário da maioria dos planetas, fenômeno chamado rotação retrógrada.</p>
+            </div>
+        </li>
+    </ul>
 </section>
 
 <section class="buckets">
@@ -124,40 +146,16 @@
             <img src="./terra..gif" alt="Terra">
             <div class="bucket">
                 <h3 class="bucket-title">Terra</h3>
-                <p>O Planeta Terra, também conhecido como mundo, planeta azul ou planeta água, tem cerca de 70% da sua superfície coberta por água...</p>
+                <p>Terra é o terceiro planeta do Sistema Solar e o único conhecido a abrigar vida. Possui 70% da superfície coberta por água e atmosfera rica em oxigênio. Sua composição inclui rochas, magma e diversas formas de vida, em constante transformação.</p>
+                <p><strong>Curiosidade:</strong> A Terra tem um campo magnético que protege a vida da radiação solar.</p>
             </div>
         </li>
         <li>
             <img src="./lua1.jpg" alt="Lua">
             <div class="bucket">
                 <h3 class="bucket-title">Lua</h3>
-                <p>24 de dezembro - Há 45 anos, os tripulantes da missão Apollo 8 fizeram a primeira viagem humana à Lua...</p>
-            </div>
-        </li>
-    </ul>
-</section>
-
-<section class="splash">
-    <div class="splash-content">
-        <h2 class="content-title">A misteriosa origem da partícula OMG</h2>
-        <p>O mistério não se limita apenas à partícula OMG, pois a ciência ainda não descobriu completamente qual é a origem dos raios cósmicos...</p>
-    </div>
-</section>
-
-<section class="buckets">
-    <ul>
-        <li>
-            <img src="./plutão30.gif" alt="Plutão">
-            <div class="bucket">
-                <h3 class="bucket-title">Plutão</h3>
-                <p>Descoberto em 1930 pelo astrônomo Clyde Tombaugh, Plutão está localizado no Cinturão de Kuiper...</p>
-            </div>
-        </li>
-        <li>
-            <img src="./venus.01.gif" alt="Vênus">
-            <div class="bucket">
-                <h3 class="bucket-title">Vênus</h3>
-                <p>O planeta Vênus, sendo o segundo a partir do Sol, é o mais quente do Sistema Solar...</p>
+                <p>A Lua é o satélite natural da Terra, responsável pelas marés e estabilização do eixo de rotação terrestre. Sua superfície tem crateras, mares lunares e montanhas. A primeira viagem humana à Lua foi em 1968, com a missão Apollo 8.</p>
+                <p><strong>Curiosidade:</strong> A Lua se afasta da Terra cerca de 3,8 cm por ano.</p>
             </div>
         </li>
     </ul>
@@ -166,17 +164,19 @@
 <section class="buckets">
     <ul>
         <li>
-            <img src="./urano 9.gif" alt="Urano">
+            <img src="./marte.gif" alt="Marte">
             <div class="bucket">
-                <h3 class="bucket-title">Urano</h3>
-                <p>O planeta Urano é o terceiro maior do Sistema Solar e está posicionado na sétima órbita a partir do Sol...</p>
+                <h3 class="bucket-title">Marte</h3>
+                <p>Marte é o quarto planeta do Sistema Solar, conhecido como Planeta Vermelho devido ao ferro em sua superfície. Possui grandes vulcões, vales e calotas polares de gelo. Tem duas luas: Fobos e Deimos.</p>
+                <p><strong>Curiosidade:</strong> Marte tem o maior vulcão do Sistema Solar, Olympus Mons, com 22 km de altura.</p>
             </div>
         </li>
         <li>
-            <img src="./neturno.gif" alt="Netuno">
+            <img src="./jupter1.gif" alt="Júpiter">
             <div class="bucket">
-                <h3 class="bucket-title">Netuno</h3>
-                <p>Netuno é o oitavo planeta do Sistema Solar, com temperaturas muito baixas, em torno de -200 °C...</p>
+                <h3 class="bucket-title">Júpiter</h3>
+                <p>Júpiter é o maior planeta do Sistema Solar e é um gigante gasoso, formado principalmente por hidrogênio e hélio. Possui um enorme sistema de nuvens, tempestades intensas, incluindo a famosa Grande Mancha Vermelha, e dezenas de luas, como Europa e Ganimedes.</p>
+                <p><strong>Curiosidade:</strong> Júpiter poderia conter 1.300 Terras em seu interior.</p>
             </div>
         </li>
     </ul>
@@ -184,33 +184,45 @@
 
 <section class="buckets">
     <ul>
-        <li>
-            <img src="./mercurio.jpg" alt="Mercúrio">
-            <div class="bucket">
-                <h3 class="bucket-title">Mercúrio</h3>
-                <p>Mercúrio é considerado o menor planeta do Sistema Solar desde o rebaixamento de Plutão a planeta anão...</p>
-            </div>
-        </li>
         <li>
             <img src="./saturno.gif" alt="Saturno">
             <div class="bucket">
                 <h3 class="bucket-title">Saturno</h3>
-                <p>Saturno é o sexto planeta a partir do Sol e é o segundo maior planeta do Sistema Solar...</p>
+                <p>Saturno é conhecido por seus belos anéis compostos de gelo e rocha. É um gigante gasoso, com atmosfera de hidrogênio e hélio. Possui dezenas de luas, incluindo Titã, que tem atmosfera densa.</p>
+                <p><strong>Curiosidade:</strong> Saturno tem o menor densidade do Sistema Solar, flutuaria na água!</p>
+            </div>
+        </li>
+        <li>
+            <img src="./urano 9.gif" alt="Urano">
+            <div class="bucket">
+                <h3 class="bucket-title">Urano</h3>
+                <p>Urano é um gigante gasoso, posicionado na sétima órbita a partir do Sol. Tem uma coloração azul-esverdeada devido ao metano em sua atmosfera. Urano possui 27 luas conhecidas e anéis escuros.</p>
+                <p><strong>Curiosidade:</strong> Urano gira praticamente de lado, com seu eixo quase paralelo ao plano da órbita.</p>
             </div>
         </li>
     </ul>
 </section>
 
-<aside class="sidebar">
-    <div class="twin">
-        <h2 class="content-title">Marte</h2>
-        <p>Marte, conhecido como Planeta Vermelho, possui características estruturais semelhantes às da Terra...</p>
-    </div>
-    <div class="twin">
-        <h2 class="content-title">Júpiter</h2>
-        <p>Júpiter é formado basicamente por gases e é classificado como planeta gasoso...</p>
-    </div>
-</aside>
+<section class="buckets">
+    <ul>
+        <li>
+            <img src="./neturno.gif" alt="Netuno">
+            <div class="bucket">
+                <h3 class="bucket-title">Netuno</h3>
+                <p>Netuno é o oitavo planeta do Sistema Solar, um gigante de gelo. Sua atmosfera é composta por hidrogênio, hélio e metano, com ventos mais fortes do Sistema Solar. Possui 14 luas conhecidas, incluindo Tritão.</p>
+                <p><strong>Curiosidade:</strong> Netuno leva 164 anos terrestres para completar uma órbita ao redor do Sol.</p>
+            </div>
+        </li>
+        <li>
+            <img src="./plutão30.gif" alt="Plutão">
+            <div class="bucket">
+                <h3 class="bucket-title">Plutão</h3>
+                <p>Plutão é um planeta anão do Cinturão de Kuiper, com superfície de gelo e rochas. Possui cinco luas conhecidas, incluindo Caronte, sua maior lua. Foi considerado planeta até 2006.</p>
+                <p><strong>Curiosidade:</strong> Plutão tem uma órbita altamente elíptica e inclinada em relação aos planetas principais.</p>
+            </div>
+        </li>
+    </ul>
+</section>
 
 <footer class="fixed-footer">
     <span>sempre é bom ter esperança: adriano alves</span>
